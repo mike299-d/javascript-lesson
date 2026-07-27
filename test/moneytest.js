@@ -1,4 +1,4 @@
-import {FormatCurrency} from "../scripts/utilis/money.js"
+import {FormatCurrency} from "../utilis/money.js"
 console.log("test suite : Formatcurrency")
 console.log('convert cents into dollars')
 if (FormatCurrency(2095)==="20.95"){

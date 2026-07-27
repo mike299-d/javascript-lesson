@@ -1,6 +1,6 @@
 import  {cart,addToCart} from '../data/cart.js';
 import { products } from '../data/products.js';
-import { FormatCurrency } from './utilis/money.js';
+import { FormatCurrency } from '../utilis/money.js';
 let productsHTML ='';
 products.forEach((product)=>{
 
