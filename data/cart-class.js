@@ -1,12 +1,12 @@
 class Cart{
      cartItems;
-     localStorageKey;
+     #localStorageKey;
      constructor(localStorageKey){
-        this.localStorageKey="localStorageKey" // each of the object generated from the class is called an instance of a class
-        this.loadFromStorage(); 
+        this.#localStorageKey="localStorageKey" // each of the object generated from the class is called an instance of a class
+        this.#loadFromStorage(); 
      }
-      loadFromStorage (){
-      this.cartItems=JSON.parse(localStorage.getItem(this.localStorageKey))
+      #loadFromStorage (){
+      this.cartItems=JSON.parse(localStorage.getItem(this.#localStorageKey))
       if (!this.cartItems){
 
       this.cartItems= [{
@@ -25,7 +25,7 @@ class Cart{
 }
 
 saveStorage (){
-    localStorage.setItem('this. localStorageKey',JSON.stringify(this.cartItems))
+    localStorage.setItem('this.#localStorageKey',JSON.stringify(this.cartItems))
    }
    addToCart(productId,quantity){
     let matchingItem;
@@ -102,8 +102,7 @@ updateDeliveryOption(productId,deliveryOptionId){
 
 const cart= new Cart();
 const buisnessCart=new Cart();
-
-
+cart.#localStorageKey="test"
 
 console.log(cart);
 console.log(buisnessCart);
