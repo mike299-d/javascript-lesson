@@ -57,7 +57,7 @@ console.log(dateString, 'dateString')
                  ${matchingProduct.name}
                 </div>
                 <div class="product-price">
-                  $${FormatCurrency(matchingProduct.priceCents)}
+                 ${matchingProduct.getPrice()}
                 </div>
                 <div class="product-quantity">
                   <span>
