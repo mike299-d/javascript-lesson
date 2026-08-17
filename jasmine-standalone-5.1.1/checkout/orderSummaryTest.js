@@ -1,12 +1,29 @@
 import { renderOptionSummary } from "../../scripts/checkout/ordersummary.js";
 import { loadFromStorage } from "../../data/cart.js";
-describe("test suite: renderOrdersummary",()=>{
+import { loadProducts } from "../../data/products.js";
 
+
+
+describe("test suite: renderOrdersummary",()=>{
   it("displays the cart",()=>{
     document.querySelector(".js-test-container").innerHTML=`
     <div class="js-order-summary"></div>
     <div class="js-cart-quantity-checkout "></div>
     `;
+
+    beforeAll((done)=>{
+      loadProducts(()=>{
+             done();
+      });
+    
+    });
+    beforeEach(()=>{
+ 
+
+
+
+
+    })
       spyOn(localStorage,"getItem").and.callFake(()=>{
         return JSON.stringify([{     
         productId:'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
